@@ -23,4 +23,4 @@ spec:
         image: sisco1206/dsg-httpd
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 8180
