@@ -1,6 +1,12 @@
 # Pull base image 
-From tomcat:8-jre8 
+From ubuntu:18.04 
 
 # Maintainer 
-MAINTAINER "kserge2001@yahoo.fr" 
-COPY webapp/target/devops.war /usr/local/tomcat/webapps
+MAINTAINER "fnahounou6@gmail,com" 
+RUN apt-get update
+RUN apt-get install apache2 -y
+RUN systemctl start apache2
+RUN systemctl enable apache2
+EXPOSE 87
+COPY ./index.html /var/www/html
+CMD apache2 -D FOREGROUND
